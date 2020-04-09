@@ -7,11 +7,10 @@ Bobby Kartali
 Brooke Wedeward
 
 Purpose of APP:
-To show next upcoming space launches and display a encouraging alien
-You will be able to search launches by dates and cities
+To ask The Alien Steve advice, and he gives it to you!
 
 APIs that will be used:
-Launch Library
+Advice Slip
 Robohash
 
 WIRE FRAME:
