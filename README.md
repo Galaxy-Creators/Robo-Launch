@@ -14,3 +14,6 @@ Advice Slip
 Robohash
 
 WIRE FRAME:
+
+![Wireframe](screenshot.png)
+Screen Shot 2020-04-08 at 9.27.39 PM
