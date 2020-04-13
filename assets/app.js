@@ -45,6 +45,8 @@ $("#submit").on("click", function (event) {
 		url: adviceQueryURL,
 		method: "GET",
 	}).then(function (response) {
-		console.log(response);
+    console.log(response);
+    // $("#advice-output").text(JSON.stringify(response));
+    $("#advice-output").append(response["slip"].advice);
 	});
 });
