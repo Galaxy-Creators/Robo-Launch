@@ -1,4 +1,3 @@
-
 $('.stuff').on('click', function (event) {
     event.preventDefault();
     var queryURL = 'https://api.giphy.com/v1/stickers/search?q=aliens&api_key=yj2GYkgWF6vExu23oEOyov2Ydg9xDUGU&limit=1&rating=g'
@@ -27,3 +26,25 @@ $('.stuff').on('click', function (event) {
         steveImage.css("background-size", "contain")
       });
 })
+	$.ajax({
+		url: queryURL,
+		method: "GET",
+	}).then(function (response) {
+		var results = response.data;
+		console.log(results);
+		console.log("hi");
+	});
+
+
+$("#submit").on("click", function (event) {
+	event.preventDefault();
+	var adviceQueryURL = "https://api.adviceslip.com/advice";
+	console.log(adviceQueryURL);
+
+	$.ajax({
+		url: adviceQueryURL,
+		method: "GET",
+	}).then(function (response) {
+		console.log(response);
+	});
+});
