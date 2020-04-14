@@ -1,6 +1,7 @@
 $('.stuff').on('click', function (event) {
     event.preventDefault();
-    var queryURL = 'https://api.giphy.com/v1/stickers/search?q=aliens&api_key=yj2GYkgWF6vExu23oEOyov2Ydg9xDUGU&limit=1&rating=g'
+    var random = Math.floor(Math.random() * 30) + 1  
+    var queryURL = 'https://api.giphy.com/v1/stickers/search?q=aliens&api_key=yj2GYkgWF6vExu23oEOyov2Ydg9xDUGU&limit=1&offset='+random+'&rating=g'
     console.log(queryURL);
 
     $.ajax({
@@ -10,7 +11,7 @@ $('.stuff').on('click', function (event) {
         var results = response.data;
         console.log(results)
        
-        var imageRes = results[0].images.fixed_width_small_still.url
+        var imageRes = results[0].images.original.url
         console.log(imageRes)
 
         // var res = $("<img>")
@@ -26,15 +27,6 @@ $('.stuff').on('click', function (event) {
         steveImage.css("background-size", "contain")
       });
 })
-	$.ajax({
-		url: queryURL,
-		method: "GET",
-	}).then(function (response) {
-		var results = response.data;
-		console.log(results);
-		console.log("hi");
-	});
-
 
 $("#submit").on("click", function (event) {
 	event.preventDefault();
