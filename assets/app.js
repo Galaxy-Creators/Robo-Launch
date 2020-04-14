@@ -27,18 +27,21 @@ $('.stuff').on('click', function (event) {
         steveImage.css("background-size", "contain")
       });
 })
-
 $("#submit").on("click", function (event) {
 	event.preventDefault();
 	var adviceQueryURL = "https://api.adviceslip.com/advice";
-	console.log(adviceQueryURL);
+  console.log(adviceQueryURL);
+
+ 
 
 	$.ajax({
 		url: adviceQueryURL,
 		method: "GET",
-	}).then(function (response) {
-    console.log(response);
-    // $("#advice-output").text(JSON.stringify(response));
-    $("#advice-output").append(response["slip"].advice);
+	}).then(function (data) {
+    var obj = JSON.parse(data);
+    console.log(data);
+    $("#advice-output").text(obj.slip.advice);
+    console.log(obj.slip.advice)
+ 
 	});
 });
