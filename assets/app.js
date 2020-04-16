@@ -28,8 +28,10 @@ $('#submit').on('click', function (event) {
       });
 })
 $("#submit").on("click", function (event) {
-	event.preventDefault();
-	var adviceQueryURL = "https://api.adviceslip.com/advice";
+  event.preventDefault();
+  var topics = $('#topics').val();
+	var adviceQueryURL = "https://api.adviceslip.com/advice/search/" + topics;
+  console.log(topics);
   console.log(adviceQueryURL);
 
  
@@ -39,9 +41,9 @@ $("#submit").on("click", function (event) {
 		method: "GET",
 	}).then(function (data) {
     var obj = JSON.parse(data);
-    console.log(data);
-    $("#advice-output").text(obj.slip.advice);
-    console.log(obj.slip.advice)
+    console.log(obj);
+    $("#advice-output").text(obj.slips[1].advice);
+    console.log(obj.slips[1].advice)
  
 	});
 });
