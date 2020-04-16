@@ -1,4 +1,4 @@
-$('.stuff').on('click', function (event) {
+$('#submit').on('click', function (event) {
     event.preventDefault();
     var random = Math.floor(Math.random() * 30) + 1  
     var queryURL = 'https://api.giphy.com/v1/stickers/search?q=aliens&api_key=yj2GYkgWF6vExu23oEOyov2Ydg9xDUGU&limit=1&offset='+random+'&rating=g'
