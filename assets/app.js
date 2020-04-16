@@ -51,28 +51,31 @@ $("#submit").on("click", function (event) {
 
 
 var config = {
-  apiKey: "AIzaSyCrN5q0jT45Px5plI5mMoRlTyeTFR2Aoow",
-  authDomain: "clickcountdown-a6a78.firebaseapp.com",
-  databaseURL: "https://clickcountdown-a6a78.firebaseio.com",
-  projectId: "clickcountdown-a6a78",
-  storageBucket: "clickcountdown-a6a78.appspot.com",
+    apiKey: "AIzaSyC8qTXPN7ZPKgT-CuURP20Dv8BDBSwl6ws",
+    authDomain: "robo-launch-3eae7.firebaseapp.com",
+    databaseURL: "https://robo-launch-3eae7.firebaseio.com",
+    projectId: "robo-launch-3eae7",
+    storageBucket: "robo-launch-3eae7.appspot.com",
+    messagingSenderId: "317334906849",
+    appId: "1:317334906849:web:d70154618b4232a9e414a0",
+    measurementId: "G-HT484WPKQ8"
 };
 
 firebase.initializeApp(config);
 
 var dataRef = firebase.database();
 
-var friendship = "";
-var food = "";
-var life = "";
-var love = "";
-var other = "";
+var friendship = 0;
+var food = 0;
+var life = 0;
+var love = 0;
+var other = 0;
 
 $("#submit").on("click", function(event) {
   event.preventDefault();
 
-  friendship = $("#frienship").val().trim();
-  food = $("food").val().trim();
+  friendship = $("#friendship").val().trim();
+  food = $("#food").val().trim();
   life = $("#life").val().trim();
   love = $("#love").val().trim();
   other = $("#other").val().trim();
