@@ -22,12 +22,15 @@ var loveCounter = love;
 var otherCounter = other;
 var reset = false;
 
-
-
-
 $("#submit").on("click", function (event) {
+	var name = $("#nameInput").val()
+	console.log("hi", name)
+	if(name){
+
+	
+	
 	event.preventDefault();
-	reset
+	// reset
 	var random = Math.floor(Math.random() * 30) + 1;
 	var queryURL =
 		"https://api.giphy.com/v1/stickers/search?q=aliens&api_key=yj2GYkgWF6vExu23oEOyov2Ydg9xDUGU&limit=1&offset=" +
@@ -97,5 +100,9 @@ $("#submit").on("click", function (event) {
 
   // Change the HTML to reflect the local value in firebase.
 	// $("#click-value").text(clickCounter);
+}
+else{
+	alert("Please enter 'Your Name'")
+}
 });
 

@@ -32,18 +32,13 @@
 				About Steve
 			</button>
 		</nav>
-
+		<br>
 		<div class="container" id="header">
 			<div class="container" id="form">
-				<form class="border border-light p-5">
-					<input
-						type="text"
-						id="defaultSaveFormFirstName"
-						class="form-control"
-						placeholder="First name"
-					/>
-
-					<label for="topics">Topics</label>
+			    <form name="contact_form" method="post">
+				<input id="nameInput" type="text" name="contact_name" placeholder="Your Name">
+				
+					<label for="topics">Topics:</label>
 					<select id="topics">
 						<option>Friendship</option>
 						<option>Food</option>
@@ -52,9 +47,11 @@
 						<option>Other</option>
 					</select>
 
+
 					<button id="submit" class="btn btn-info btn-block" type="submit">
 						Submit
 					</button>
+
 				</form>
 			</div>
 			<div id="steve-image"></div>
@@ -86,6 +83,7 @@
 			</table>
 		</div>
 		<!-- Optional JavaScript -->
+
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 		<script
 			src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
