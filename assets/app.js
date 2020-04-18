@@ -1,9 +1,9 @@
 var config = {
-  apiKey: "AIzaSyC8qTXPN7ZPKgT-CuURP20Dv8BDBSwl6ws",
-  authDomain: "robo-launch-3eae7.firebaseapp.com",
-  databaseURL: "https://robo-launch-3eae7.firebaseio.com",
-  projectId: "robo-launch-3eae7",
-  storageBucket: "robo-launch-3eae7.appspot.com",
+	apiKey: "AIzaSyC8qTXPN7ZPKgT-CuURP20Dv8BDBSwl6ws",
+    authDomain: "robo-launch-3eae7.firebaseapp.com",
+    databaseURL: "https://robo-launch-3eae7.firebaseio.com",
+    projectId: "robo-launch-3eae7",
+    storageBucket: "robo-launch-3eae7.appspot.com"
 };
 
 firebase.initializeApp(config);
@@ -14,29 +14,43 @@ var friend = 0;
 var work = 0;
 var life = 0;
 var love = 0;
+var want = 0;
+var you = 0;
 var other = 0;
 var friendCounter = friend;
 var workCounter = work;
 var lifeCounter = life;
 var loveCounter = love;
+var wantCounter = want;
+var youCounter = you;
 var otherCounter = other;
 
 dataRef.ref().on("value", function (snapshot) {
   // Print the local data to the console.
   console.log(snapshot.val());
   // Change the HTML to reflect the local value in firebase.
-  friendCounter = snapshot.val().friend;
-  workCounter = snapshot.val().work;
-  lifeCounter = snapshot.val().life;
-  loveCounter = snapshot.val().love;
-  otherCounter = snapshot.val().other;
-
-  $("#friendCounter").text(friendCounter);
-  $("#workCounter").text(workCounter);
-  $("#lifeCounter").text(lifeCounter);
-  $("#loveCounter").text(loveCounter);
-  $("#otherCounter").text(otherCounter);
-
+  if (snapshot.child("friend").exists()) {
+	friendCounter = snapshot.val().friend;
+  } $("#friendCounter").text(friendCounter);
+  if (snapshot.child("work").exists()) {
+	workCounter = snapshot.val().work;
+  } $("#workCounter").text(workCounter);
+  if (snapshot.child("life").exists()) {
+	lifeCounter = snapshot.val().life;
+  } $("#lifeCounter").text(lifeCounter); 
+  if (snapshot.child("love").exists()) {
+	loveCounter = snapshot.val().love;
+  } $("#loveCounter").text(loveCounter); 
+  if (snapshot.child("want").exists()) {
+	wantCounter = snapshot.val().want;
+  } $("#wantCounter").text(wantCounter);
+  if (snapshot.child("you").exists()) {
+	youCounter = snapshot.val().you;
+  } $("#youCounter").text(youCounter);
+  if (snapshot.child("other").exists()) {
+	otherCounter = snapshot.val().other;
+  } $("#otherCounter").text(otherCounter);
+  
   $("#submit").removeAttr("disabled");
 });
 
@@ -89,10 +103,10 @@ if (name){
     console.log(obj.slips[randomize].advice);
   });
 
-  if (topics === "friend") {
+  if (topics === "Friend") {
     friendCounter = friendCounter + 1;
     console.log(friendCounter);
-  } else if (topics === "work") {
+  } else if (topics === "Work") {
     workCounter = workCounter + 1;
     console.log(workCounter);
   } else if (topics === "Life") {
@@ -101,6 +115,12 @@ if (name){
   } else if (topics === "Love") {
     loveCounter = loveCounter + 1;
     console.log(loveCounter);
+  } else if (topics === "Want") {
+    wantCounter = wantCounter + 1;
+    console.log(wantCounter);
+  } else if (topics === "You") {
+	youCounter = youCounter + 1;
+    console.log(youCounter);
   } else if (topics === "Other") {
     otherCounter = otherCounter + 1;
     console.log(otherCounter);
@@ -110,7 +130,9 @@ if (name){
     friend: friendCounter,
     work: workCounter,
     life: lifeCounter,
-    love: loveCounter,
+	love: loveCounter,
+	want: wantCounter,
+	you: youCounter,
     other: otherCounter,
   });
 } else {
