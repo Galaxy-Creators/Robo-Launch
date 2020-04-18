@@ -10,12 +10,17 @@
 
 		<!-- Bootstrap CSS -->
 		<link
-		rel="stylesheet"
-		href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-		crossorigin="anonymous"
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+			crossorigin="anonymous"
 		/>
-		<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/purecss@1.0.1/build/pure-min.css"
+			integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47"
+			crossorigin="anonymous"
+		/>
 		<link rel="stylesheet" href="assets/style/style.css" />
 
 		<title>Robo Launch</title>
@@ -28,76 +33,58 @@
 			</button>
 		</nav>
 
-		<div class="container" id="header"></div>
+		<div class="container" id="header">
+			<div class="container" id="form">
+				<form class="border border-light p-5">
+					<input
+						type="text"
+						id="defaultSaveFormFirstName"
+						class="form-control"
+						placeholder="First name"
+					/>
 
-		<div class="container" id="form">
-			<form class="border border-light p-5">
+					<label for="topics">Topics</label>
+					<select id="topics">
+						<option>Friendship</option>
+						<option>Food</option>
+						<option>Life</option>
+						<option>Love</option>
+						<option>Other</option>
+					</select>
 
-				<input
-					type="text"
-					id="defaultSaveFormFirstName"
-					class="form-control"
-					placeholder="First name"
-				/>
-<!-- 
-				<textarea
-					class="form-control rounded-0"
-					id="exampleFormControlTextareaSave"
-					rows="3"
-					placeholder="Your Question For Steve!"
-				></textarea> -->
-				<!-- <div class="pure-menu pure-menu-horizontal">
-					<ul class="pure-menu-list">
-						<li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-							<a href="#" id="topics" class="pure-menu-link">Topics</a>
-							<ul class="pure-menu-children">
-								<li id="friendship" class="pure-menu-item query"><a href="#" class="pure-menu-link">Friendship</a></li>
-								<li id="food" class="pure-menu-item query"><a href="#" class="pure-menu-link">Food</a></li>
-								<li id="life" class="pure-menu-item query"><a href="#" class="pure-menu-link">Life</a></li>
-								<li id="love" class="pure-menu-item query"><a href="#" class="pure-menu-link">Love</a></li>
-								<li id="other" class="pure-menu-item query"><a href="#" class="pure-menu-link">Other</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div> -->
-				<label for="topics">Topics</label>
-				<select id="topics">
-					<option>Friendship</option>
-					<option>Food</option>
-					<option>Life</option>
-					<option>Love</option>
-					<option>Other</option>
-				</select>
-
-				<button id="submit" class="btn btn-info btn-block" type="submit">
-					Submit
-				</button>
-			</form>
-		</div>
-		<div class="container">
-			<div class="container" id="steve-image">
+					<button id="submit" class="btn btn-info btn-block" type="submit">
+						Submit
+					</button>
+				</form>
 			</div>
-			<div class="container" id="advice-block">
-				<div class="card">
-					<h5 class="card-header">
-						Question: <span id="question-output"></span>
-					</h5>
-					<div class="card-body">
-						<h5 class="card-title">Steve's Advice:</h5>
-						<p class="card-text">
-							<span id="advice-output"></span>
-						</p>
-						<p class="card-text">
+			<div id="steve-image"></div>
+			<table id="advice-block" class="pure-table">
+				<thead>
+					<tr>
+						<th>Steve's Advice on<span id="topic-output"></span></th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td>Hello<span id="user-name"></span>,</td>
+					</tr>
+
+					<tr>
+						<td><span id="advice-output"></span></td>
+					</tr>
+
+					<tr>
+						<td>
 							<small class="text-muted"
 								>Disclaimer: Sometimes looking for answers only leads to more
 								questions.
 							</small>
-						</p>
-					</div>
-				</div>
-			</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
-
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 		<script
@@ -119,6 +106,5 @@
 		<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="assets/app.js"></script>
-
 	</body>
 </html>
