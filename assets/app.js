@@ -41,6 +41,11 @@ dataRef.ref().on("value", function (snapshot) {
 });
 
 $("#submit").on("click", function (event) {
+var name = $("#nameInput").val()
+if (name){
+
+
+
   event.preventDefault();
   var random = Math.floor(Math.random() * 30) + 1;
   var queryURL =
@@ -108,7 +113,9 @@ $("#submit").on("click", function (event) {
     love: loveCounter,
     other: otherCounter,
   });
-
+} else {
+	alert("Please enter 'Your Name'")
+}
   // Change the HTML to reflect the local value in firebase.
   // $("#click-value").text(clickCounter);
 });
