@@ -3,44 +3,44 @@ var config = {
   authDomain: "robo-launch-3eae7.firebaseapp.com",
   databaseURL: "https://robo-launch-3eae7.firebaseio.com",
   projectId: "robo-launch-3eae7",
-  storageBucket: "robo-launch-3eae7.appspot.com"
+  storageBucket: "robo-launch-3eae7.appspot.com",
 };
 
 firebase.initializeApp(config);
 
 var dataRef = firebase.database();
 
-var friendship = 0;
-var food = 0;
+var friend = 0;
+var work = 0;
 var life = 0;
 var love = 0;
 var other = 0;
-var friendshipCounter = friendship;
-var foodCounter = food;
+var friendCounter = friend;
+var workCounter = work;
 var lifeCounter = life;
 var loveCounter = love;
 var otherCounter = other;
 
-dataRef.ref().on("value", function(snapshot) {
-    // Print the local data to the console.
-    console.log(snapshot.val());
-    // Change the HTML to reflect the local value in firebase.
-    friendshipCounter = snapshot.val().friendship;
-    foodCounter = snapshot.val().food;
-    lifeCounter = snapshot.val().life;
-    loveCounter = snapshot.val().love;
-    otherCounter = snapshot.val().other;
+dataRef.ref().on("value", function (snapshot) {
+  // Print the local data to the console.
+  console.log(snapshot.val());
+  // Change the HTML to reflect the local value in firebase.
+  friendCounter = snapshot.val().friend;
+  workCounter = snapshot.val().work;
+  lifeCounter = snapshot.val().life;
+  loveCounter = snapshot.val().love;
+  otherCounter = snapshot.val().other;
 
-    $("#friendshipCounter").text(friendshipCounter);
-    $("#foodCounter").text(foodCounter);
-    $("#lifeCounter").text(lifeCounter);
-    $("#loveCounter").text(loveCounter);
-	$("#otherCounter").text(otherCounter);
-	
-	$("#submit").removeAttr("disabled")
-  });
+  $("#friendCounter").text(friendCounter);
+  $("#workCounter").text(workCounter);
+  $("#lifeCounter").text(lifeCounter);
+  $("#loveCounter").text(loveCounter);
+  $("#otherCounter").text(otherCounter);
 
-$("#submit").on("click", function(event) {
+  $("#submit").removeAttr("disabled");
+});
+
+$("#submit").on("click", function (event) {
   event.preventDefault();
   var random = Math.floor(Math.random() * 30) + 1;
   var queryURL =
@@ -52,8 +52,8 @@ $("#submit").on("click", function(event) {
   // GIPHY API CALL
   $.ajax({
     url: queryURL,
-    method: "GET"
-  }).then(function(response) {
+    method: "GET",
+  }).then(function (response) {
     var results = response.data;
     // console.log(results);
 
@@ -75,8 +75,8 @@ $("#submit").on("click", function(event) {
   // ADVICE SLIP API CALL
   $.ajax({
     url: adviceQueryURL,
-    method: "GET"
-  }).then(function(data) {
+    method: "GET",
+  }).then(function (data) {
     var obj = JSON.parse(data);
     console.log(obj);
     var randomize = Math.floor(Math.random() * obj.slips.length);
@@ -84,14 +84,12 @@ $("#submit").on("click", function(event) {
     console.log(obj.slips[randomize].advice);
   });
 
-  
-
-  if (topics === "Friendship") {
-    friendshipCounter = friendshipCounter + 1;
-    console.log(friendshipCounter);
-  } else if (topics === "Food") {
-    foodCounter = foodCounter + 1;
-    console.log(foodCounter);
+  if (topics === "friend") {
+    friendCounter = friendCounter + 1;
+    console.log(friendCounter);
+  } else if (topics === "work") {
+    workCounter = workCounter + 1;
+    console.log(workCounter);
   } else if (topics === "Life") {
     lifeCounter = lifeCounter + 1;
     console.log(lifeCounter);
@@ -104,11 +102,11 @@ $("#submit").on("click", function(event) {
   }
 
   dataRef.ref().set({
-    friendship: friendshipCounter,
-    food: foodCounter,
+    friend: friendCounter,
+    work: workCounter,
     life: lifeCounter,
     love: loveCounter,
-    other: otherCounter
+    other: otherCounter,
   });
 
   // Change the HTML to reflect the local value in firebase.
