@@ -1,16 +1,9 @@
-// var config = {
-//   apiKey: "AIzaSyC8qTXPN7ZPKgT-CuURP20Dv8BDBSwl6ws",
-//   authDomain: "robo-launch-3eae7.firebaseapp.com",
-//   databaseURL: "https://robo-launch-3eae7.firebaseio.com",
-//   projectId: "robo-launch-3eae7",
-//   storageBucket: "robo-launch-3eae7.appspot.com"
-// };
 var config = {
-  apiKey: "AIzaSyDSXV5ayqQFNOatW0qGmlWWgsUH32P_5b4",
-  authDomain: "wisconsin-lc.firebaseapp.com",
-  databaseURL: "https://wisconsin-lc.firebaseio.com",
-  projectId: "wisconsin-lc",
-  storageBucket: "wisconsin-lc.appspot.com"
+  apiKey: "AIzaSyC8qTXPN7ZPKgT-CuURP20Dv8BDBSwl6ws",
+  authDomain: "robo-launch-3eae7.firebaseapp.com",
+  databaseURL: "https://robo-launch-3eae7.firebaseio.com",
+  projectId: "robo-launch-3eae7",
+  storageBucket: "robo-launch-3eae7.appspot.com"
 };
 
 firebase.initializeApp(config);
