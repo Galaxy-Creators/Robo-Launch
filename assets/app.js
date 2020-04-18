@@ -21,6 +21,25 @@ var lifeCounter = life;
 var loveCounter = love;
 var otherCounter = other;
 
+dataRef.ref().on("value", function(snapshot) {
+    // Print the local data to the console.
+    console.log(snapshot.val());
+    // Change the HTML to reflect the local value in firebase.
+    friendshipCounter = snapshot.val().friendship;
+    foodCounter = snapshot.val().food;
+    lifeCounter = snapshot.val().life;
+    loveCounter = snapshot.val().love;
+    otherCounter = snapshot.val().other;
+
+    $("#friendshipCounter").text(friendshipCounter);
+    $("#foodCounter").text(foodCounter);
+    $("#lifeCounter").text(lifeCounter);
+    $("#loveCounter").text(loveCounter);
+	$("#otherCounter").text(otherCounter);
+	
+	$("#submit").removeAttr("disabled")
+  });
+
 $("#submit").on("click", function(event) {
   event.preventDefault();
   var random = Math.floor(Math.random() * 30) + 1;
@@ -65,22 +84,7 @@ $("#submit").on("click", function(event) {
     console.log(obj.slips[randomize].advice);
   });
 
-  dataRef.ref().on("value", function(snapshot) {
-    // Print the local data to the console.
-    console.log(snapshot.val());
-    // Change the HTML to reflect the local value in firebase.
-    friendshipCounter = snapshot.val().friendship;
-    foodCounter = snapshot.val().food;
-    lifeCounter = snapshot.val().life;
-    loveCounter = snapshot.val().love;
-    otherCounter = snapshot.val().other;
-
-    $("#friendshipCounter").text(friendshipCounter);
-    $("#foodCounter").text(foodCounter);
-    $("#lifeCounter").text(lifeCounter);
-    $("#loveCounter").text(loveCounter);
-    $("#otherCounter").text(otherCounter);
-  });
+  
 
   if (topics === "Friendship") {
     friendshipCounter = friendshipCounter + 1;
