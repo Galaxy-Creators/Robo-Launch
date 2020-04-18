@@ -1,0 +1,30 @@
+On HTML create:
+-a form that allows users to  type their name
+-a drop-down for user to select topics
+- submit button
+- area for image
+- Advice section
+-page about steve/alien
+    -Link About Steve page to home page
+
+On submit button click:
+- topic returns an avatar from API TO HTML
+    - on topic
+    - only one image
+    -G rated
+    - random
+- a piece of advice generated from API to HTML
+    - on topic
+    - only one slip
+    - random
+- Take users name to input with advice for personal touch
+
+Firebase:
+- Log topic selected
+- Increase the count in firebase by topic 
+- Persisit the data even when page refreshed
+- Pushed data to HTML
+    -Make it in order from most to least
+
+
+
