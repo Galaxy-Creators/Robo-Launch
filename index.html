@@ -1,128 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
 
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/purecss@1.0.1/build/pure-min.css"
-      integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="assets/style/style.css" />
+		<!-- Bootstrap CSS -->
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/purecss@1.0.1/build/pure-min.css"
+			integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="assets/style/style.css" />
 
-    <title>Robo Launch</title>
-  </head>
-  <body>
-    <nav class="navbar">
-      <span class="navbar-brand mb-0 h1">Alien Advice</span>
-      <button type="button" class="btn btn-color" href="about.html">
-        About Steve
-      </button>
-    </nav>
-
-    <div class="container" id="header">
-      <div class="container" id="form">
-        <form class="border border-light p-5">
-          <input
-            type="text"
-            id="nameInput"
-            class="form-control"
-            placeholder="First name"
-          />
-
-          <label for="topics">Topics</label>
-          <select id="topics">
-            <option>Friend</option>
-            <option>Work</option>
-            <option>Life</option>
-			<option>Love</option>
-			<option>Want</option>
-			<option>You</option>
-            <option>Other</option>
-          </select>
-
-          <div class="counterOutput">
-            <h2>Number of selections</h2>
-            <p>Friend: <span id="friendCounter"></span></p>
-            <p>Work: <span id="workCounter"></span></p>
-            <p>Life: <span id="lifeCounter"></span></p>
-			<p>Love: <span id="loveCounter"></span></p>
-			<p>Want: <span id="wantCounter"></span></p>
-			<p>You: <span id="youCounter"></span></p>
-            <p>Other: <span id="otherCounter"></span></p>
-          </div>
-
-          <button
-            id="submit"
-            class="btn btn-info btn-block"
-            type="submit"
-            disabled
-          >
-            Submit
-          </button>
-        </form>
-      </div>
-      <div id="steve-image"></div>
-      <table id="advice-block" class="pure-table">
-        <thead>
-          <tr>
-            <th>Steve's Advice on<span id="topic-output"></span></th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <td>Hello<span id="user-name"></span>,</td>
-          </tr>
-
-          <tr>
-            <td><span id="advice-output"></span></td>
-          </tr>
-
-          <tr>
-            <td>
-              <small class="text-muted"
-                >Disclaimer: Sometimes looking for answers only leads to more
-                questions.
-              </small>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="assets/app.js"></script>
-  </body>
+		<title>Robo Launch</title>
+	</head>
+	<body>
+		<nav
+			class="navbar navbar-expand-lg navbar-dark"
+			style="background-color: #4a26ff;"
+		>
+			<a class="navbar-brand" href="#">
+				<img
+					src="assets/images/cute-alien.png"
+					width="30"
+					height="30"
+					class="d-inline-block align-top"
+					alt=""
+				/>
+				Alien Advice</a
+			>
+			<button
+				class="navbar-toggler"
+				type="button"
+				data-toggle="collapse"
+				data-target="#navbarNav"
+				aria-controls="navbarNav"
+				aria-expanded="false"
+				aria-label="Toggle navigation"
+			>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#"
+							>Advice <span class="sr-only">(current)</span></a
+						>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="about.html">About Steve</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="container">
+			<div id="intro">
+				<div class="card">
+					<div class="card-body">
+					<p>Welcome Human,</p>
+					<p>Are you in need of guidance or advice? You have come to the right place! Steve, the Alien, has traveled the universe giving out advice to many different life forms. He has only been on Earth for a short time but he is confident his words of wisdom will bring happiness to the humans.</p>
+					<p><b>Fill out your name and pick from one of the topics that Steve, the Alien, has deemed important to human life.</b></p>
+					</div>
+				</div>
+			
+			</div>
+			<form>
+				<div class="form-group">
+				  <label for="form">First Name</label>
+				  <input type="text" class="form-control" id="nameInput" placeholder="Steve">
+				</div>
+				<div class="form-group">
+					<div class="row">
+				  <label id="topic-label" for="topics">Topics</label> 
+				  <div class="col-md-4 offset-md-1">
+					 <button class="btn btn-sm text-white" style="background-color: #4a26ff;" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+					Topic Numbers
+				  </button>
+				</p>
+				<div class="collapse" id="collapseExample">
+				  <div class="card card-body">
+					<div class="counterOutput">
+						<table id="topic-data" class="table table-sm">
+							<thead class="text-white" style="background-color: #4a26ff;">
+							  <tr>
+								<th scope="col">Topic</th>
+								<th scope="col"># of Times Selected</th>
+							</tr>
+							</thead>
+							<tbody>
+							  <tr>
+								<td>Friend</td>
+								<td><span id="friendCounter"></span></td>
+							  </tr>
+							  <tr>
+								<td>Work</td>
+								<td><span id="workCounter"></span></td>
+							  </tr>
+							  <tr>
+								<td>Life</td>
+								<td><span id="lifeCounter"></span></td>
+							  </tr>
+							  <tr>
+								<td>Love</td>
+								<td><span id="loveCounter"></span></td>
+							  </tr>
+							  <tr>
+								<td>Want</td>
+								<td><span id="wantCounter"></span></td>
+							  </tr>
+							  <tr>
+								<td>You</td>
+								<td><span id="youCounter"></span></td>
+							  </tr>
+							  <tr>
+								<td>Other</td>
+								<td><span id="otherCounter"></span></td>
+							  </tr>
+							</tbody>
+						  </table>
+						</div>	
+				  </div>
+				</div> 
+				  </div>
+				   </div>
+				  <select class="form-control" id="topics">
+					<option>Friend</option>
+						<option>Work</option>
+						<option>Life</option>
+						<option>Love</option>
+						<option>Want</option>
+						<option>You</option>
+						<option>Other</option>
+				  </select>
+				</div>
+				</form>
+				
+				<button
+						id="submit"
+						class="btn btn-block text-white"
+						style="background-color: #4a26ff;"
+						type="submit"
+						disabled
+					>
+						Submit
+					</button>
+					
+				<div id ="advice-block" class="card mb-3">
+					<div class="row no-gutters">
+					  <div class="col-md-4">
+						<div id="steve-image"></div>
+					  </div>
+					  <div class="col-md-8">
+						<div id="advice-section" class="card-body">
+						  <h5 class="card-title text-black">Steve's Advice on <span id="topic-output"></span>:</h5>
+						  <p class="card-text">Hello <span id="user-name"></span>,
+							<p><span id="advice-output"></span></p>
+							<p>Love, <br>Steve</p>
+						  <!-- <p class="card-text"><small class="text-muted">Disclaimer: Sometimes looking for answers only leads to more
+							questions</small></p> -->
+						</div>
+					  </div>
+					</div>
+				  </div>
+			
+			</div>
+	
+		</div>
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script
+			src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+			integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+			crossorigin="anonymous"
+		></script>
+		<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="assets/app.js"></script>
+	</body>
 </html>
