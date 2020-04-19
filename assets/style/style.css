@@ -1,74 +1,81 @@
 body {
-	background-image: url(/assets/images/background.jpg);
-	background-repeat: no-repeat;
-	color: #4a26ff;
+  background-image: url(../images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  min-height: 100vh;
 }
 
 .container {
-	padding: 50px;
-	margin-top: 50px;
+  padding: 50px;
+  margin-top: 50px;
 }
 
 .about-header {
-	margin-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.navbar {
+	background-color: #4a26ff;
 }
 
 #collapseExample {
-	margin-bottom: 20px;
-	text-align: center;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 #intro {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 #advice-block {
-	margin-top: 20px;
-	padding: 20px;
-	background-color: rgba(60, 126, 183, 0);
+  margin-top: 20px;
+  padding: 20px;
+  background-color: rgba(60, 126, 183, 0);
 }
 
 #advice-section {
-	margin-left: 40px;
-	border: 2px dashed white;
-	color: white;
-	background-color: rgba(74, 38, 255, 0.1);
-	text-align: justify;
+  margin-left: 40px;
+  border: 2px dashed white;
+  color: white;
+  background-color: rgba(74, 38, 255, 0.1);
+  text-align: justify;
 }
 
 #partTwo {
-	background-color: rgba(74, 38, 255, 0.692);
-	color: white;
+  background-color: rgba(74, 38, 255, 0.692);
+  color: white;
 }
 
 #topic-label {
-	margin-left: 15px;
+  margin-left: 15px;
 }
 
 .btn-color {
-	background-color: rgb(8, 8, 109);
-	color: rgb(255, 238, 253);
+  background-color: rgb(8, 8, 109);
+  color: rgb(255, 238, 253);
 }
 
 #steve-image {
-	height: 300px;
+  height: 300px;
 }
 
 #advice-block {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 figure {
-	margin-top: 20px;
+  margin-top: 20px;
 }
 td {
-	color: #4a26ff;
-	font-weight: 500;
-	border: 1px solid #4a26ff;
-	background-color: rgba(255, 238, 253, 0.856);
+  color: #4a26ff;
+  font-weight: 500;
+  border: 1px solid #4a26ff;
+  background-color: rgba(255, 238, 253, 0.856);
 }
 
 .card {
-	color: white;
-	background-color: rgba(74, 38, 255, 0.692);
+  color: white;
+  background-color: rgba(74, 38, 255, 0.692);
 }
