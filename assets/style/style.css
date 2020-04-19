@@ -62,9 +62,10 @@ figure {
 	margin-top: 20px;
 }
 td {
-	color: white;
+	color: #4a26ff;
 	font-weight: 500;
 	border: 1px solid #4a26ff;
+	background-color: rgba(255, 238, 253, 0.856);
 }
 
 .card {
