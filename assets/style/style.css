@@ -1,6 +1,30 @@
-.navbar {
-	background-color: rgb(134, 57, 206);
-	color: rgb(255, 238, 253);
+body {
+	color: #4a26ff;
+	background-image: url(/assets/images/background.jpg);
+	background-repeat: no-repeat;
+}
+
+.container {
+	padding: 50px;
+	margin-top: 50px;
+	background-color: black;
+}
+
+img {
+	opacity: 0.5;
+}
+
+#intro {
+	margin-bottom: 20px;
+}
+
+#advice-block {
+	margin-top: 20px;
+	padding: 20px;
+}
+
+#topic-label {
+	margin-left: 15px;
 }
 
 .btn-color {
