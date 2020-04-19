@@ -1,17 +1,21 @@
 body {
-	color: #4a26ff;
 	background-image: url(/assets/images/background.jpg);
 	background-repeat: no-repeat;
+	color: #4a26ff;
 }
 
 .container {
 	padding: 50px;
 	margin-top: 50px;
-	background-color: black;
 }
 
-img {
-	opacity: 0.5;
+.about-header {
+	margin-bottom: 15px;
+}
+
+#collapseExample {
+	margin-bottom: 20px;
+	text-align: center;
 }
 
 #intro {
@@ -21,6 +25,20 @@ img {
 #advice-block {
 	margin-top: 20px;
 	padding: 20px;
+	background-color: rgba(60, 126, 183, 0);
+}
+
+#advice-section {
+	margin-left: 40px;
+	border: 2px dashed white;
+	color: white;
+	background-color: rgba(74, 38, 255, 0.1);
+	text-align: justify;
+}
+
+#partTwo {
+	background-color: rgba(74, 38, 255, 0.692);
+	color: white;
 }
 
 #topic-label {
@@ -38,4 +56,18 @@ img {
 
 #advice-block {
 	margin-bottom: 20px;
+}
+
+figure {
+	margin-top: 20px;
+}
+td {
+	color: white;
+	font-weight: 500;
+	border: 1px solid #4a26ff;
+}
+
+.card {
+	color: white;
+	background-color: rgba(74, 38, 255, 0.692);
 }
