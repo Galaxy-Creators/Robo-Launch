@@ -55,6 +55,7 @@ body {
 .btn-color {
   background-color: rgb(8, 8, 109);
   color: rgb(255, 238, 253);
+  border: 1px solid white;
 }
 
 #steve-image {
@@ -78,4 +79,19 @@ td {
 .card {
   color: white;
   background-color: rgba(74, 38, 255, 0.692);
+}
+
+.modal-title, .modal-body {
+	border: 1px solid white;
+	color: #4a26ff;
+}
+
+.buttonStyle {
+	background-color: #4a26ff;
+	border: 1px solid white;
+}
+
+#topicThread {
+	border: 1px solid white;
+	border: 1px solid white;
 }

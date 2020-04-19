@@ -145,6 +145,9 @@ $("#submit").on("click", function (event) {
 			other: otherCounter,
 		});
 	} else {
-		alert("Please enter 'Your Name'");
+    // alert("Please enter 'Your Name'");
+    $('#exampleModal').on('shown.bs.modal', function () {
+      $('#myInput').trigger('focus')
+    })
 	}
 });
