@@ -82,7 +82,7 @@
 					<div class="row">
 				  <label id="topic-label" for="topics">Topics</label> 
 				  <div class="col-md-4 offset-md-1">
-					 <button class="btn btn-sm text-white" style="background-color: #4a26ff;" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+					 <button class="btn btn-sm text-white buttonStyle" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
 					Topic Numbers
 				  </button>
 				</p>
@@ -90,7 +90,7 @@
 				  <div class="card card-body">
 					<div class="counterOutput">
 						<table id="topic-data" class="table table-sm">
-							<thead class="text-white" style="background-color: #4a26ff;">
+							<thead class="text-white" id="topidThread" style="background-color: #4a26ff;">
 							  <tr>
 								<th scope="col">Topic</th>
 								<th scope="col"># of Times Selected</th>
@@ -146,14 +146,28 @@
 				
 				<button
 						id="submit"
-						class="btn btn-block text-white"
-						style="background-color: #4a26ff;"
+						class="btn btn-block text-white buttonStyle"
 						type="submit"
-						disabled
+            disabled 
+            data-toggle="modal" data-target="#exampleModal"
 					>
 						Submit
 					</button>
-					
+					<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Silly Human!</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Enter Your Name</p>
+                </div>
+              </div>
+            </div>
+          </div>
 				<div id ="advice-block" class="card mb-3">
 					<div class="row no-gutters">
 					  <div class="col-md-4">
